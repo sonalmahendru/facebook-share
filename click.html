@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hide & Seek with Ganesha</title>
+</head>
+<body>
+    <script>
+ window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '826539421486313',
+    xfbml      : true,
+    version    : 'v8.0'
+  });
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+    <main>
+        <div id="container">
+            <video autoplay="true" id="videoElement">
+            
+            </video>
+            <canvas id="canvas" width="640" height="480"></canvas><!--width="640" height="480"-->
+            <button id="snap">Snap Photo</button>
+            <a id="snapped_pic" href="" download></a>
+            <div id="share" class="share-socialmedia">
+                <button id="sharefb">Share on Facebook</button>
+                <button id="shareinsta">Share on Instagram</button>
+                <button id="reclick" onClick="retake()">Retake Photo</button>
+            </div>
+        </div>
+        
+    </main>
+    <script src="camerascript.js"></script>
+</body>
